@@ -1,0 +1,19 @@
+{
+  "name": "@pcnate/service-profile-switcher",
+  "version": "0.0.1",
+  "description": "windows service and program profile manager",
+  "main": "service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pcnate/service-profile-switcher.git"
+  },
+  "author": "Nathan Baker <pcnate@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "is-elevated": "^3.0.0",
+    "minimist": "^1.2.5"
+  }
+}
