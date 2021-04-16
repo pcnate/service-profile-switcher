@@ -66,6 +66,8 @@ function netProcess( action, service ) {
       programsToStop = [ ...programsToStop, ...programs[ noneActiveProfiles[x] ] ]
     }
   }
+  
+  servicesToStop = servicesToStop.filter( x => servicesToStart.indexOf( x ) === -1 )
 
   let results = { programs: { stop: [], start: [] }, services: { stop: [], start: [] } };
 
