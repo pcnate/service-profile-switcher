@@ -5,9 +5,42 @@ const isElevated = require('is-elevated');
 const programs = {}
 const services = {}
 
+programs.studio5000 = [];
+services.studio5000 = [
+  'FTActivationBoost',
+  'FactoryTalk Activation Service',
+  'RNADiagnosticsService',
+  'RSLinxNG',
+  'RSLinxNG02',
+  'FTLinxSecurityServer',
+  'UpdaterAgent',
+  'FTAECommandServer',
+  'FTAE_HistServ',
+  'FTAEHistorianDataProvider',
+  'FTAE_Archiver',
+  'RnaAlarmMux',
+  'RnaAeServer',
+  'RsvcHost',
+  'RNADirMultiplexor',
+  'RNADirectory',
+  'EventClientMultiplexer',
+  'EventServer',
+  'NmspHost',
+  'RdcyHost',
+  'BoxLogixDatabaseEditor',
+  'BoxLogixServerMonitor',
+  'BoxLogixServerMonitor2',
+  'MSSQLSERVER',
+  'MSSQL$SQLACM',
+  'SQLBrowser',
+  'SQLWriter',
+  'SQLTELEMETRY',
+];
+
 programs.developer = [];
 services.developer = [
   'BoxLogixDatabaseEditor',
+  'BoxLogixLogixSuiteEventServer',
   'BoxLogixServerMonitor',
   'BoxLogixServerMonitor2',
   'MSSQLSERVER',
