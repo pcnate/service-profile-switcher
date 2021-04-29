@@ -4,7 +4,12 @@
   "description": "windows service and program profile manager",
   "main": "service.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "studio5000": "node service.js --profile studio5000",
+    "developer": "node service.js --profile developer",
+    "work": "node service.js --profile work",
+    "gaming": "node service.js --profile gaming",
+    "meeting": "node service.js --profile meeting"
   },
   "repository": {
     "type": "git",
