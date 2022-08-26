@@ -32,6 +32,7 @@ services.studio5000 = [
   'BoxLogixServerMonitor2',
   'MSSQLSERVER',
   'MSSQL$SQLACM',
+  'SQLSERVERAGENT',
   'SQLBrowser',
   'SQLWriter',
   'SQLTELEMETRY',
@@ -39,12 +40,13 @@ services.studio5000 = [
 
 programs.developer = [];
 services.developer = [
-  'BoxLogixDatabaseEditor',
+  // 'BoxLogixDatabaseEditor',
   'BoxLogixLogixSuiteEventServer',
   'BoxLogixServerMonitor',
   'BoxLogixServerMonitor2',
   'MSSQLSERVER',
   'MSSQL$SQLACM',
+  'SQLSERVERAGENT',
   'SQLBrowser',
   'SQLWriter',
   'SQLTELEMETRY',
