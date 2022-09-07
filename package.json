@@ -10,6 +10,9 @@
     "work": "node service.js --profile work",
     "gaming": "node service.js --profile gaming",
     "meeting": "node service.js --profile meeting"
+    "theme:work": "node src/theme.js --profile work",
+    "theme:home": "node src/theme.js --profile home",
+    "theme:laptop": "node src/theme.js --profile laptop"
   },
   "repository": {
     "type": "git",
