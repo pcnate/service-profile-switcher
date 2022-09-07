@@ -2,14 +2,14 @@
   "name": "@pcnate/service-profile-switcher",
   "version": "0.0.1",
   "description": "windows service and program profile manager",
-  "main": "service.js",
+  "main": "src/service.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "studio5000": "node service.js --profile studio5000",
-    "developer": "node service.js --profile developer",
-    "work": "node service.js --profile work",
-    "gaming": "node service.js --profile gaming",
-    "meeting": "node service.js --profile meeting"
+    "studio5000": "node src/service.js --profile studio5000",
+    "developer": "node src/service.js --profile developer",
+    "work": "node src/service.js --profile work",
+    "gaming": "node src/service.js --profile gaming",
+    "meeting": "node src/service.js --profile meeting",
     "theme:work": "node src/theme.js --profile work",
     "theme:home": "node src/theme.js --profile home",
     "theme:laptop": "node src/theme.js --profile laptop"
