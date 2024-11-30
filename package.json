@@ -19,6 +19,6 @@
   "license": "MIT",
   "dependencies": {
     "is-elevated": "^3.0.0",
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.6"
   }
 }
