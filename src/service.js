@@ -175,8 +175,9 @@ function renderProfileList() {
   }
 
   // Calculate available width (30% of screen minus borders)
-  const boxWidth = profileBox.width - 2;
-  const contentWidth = boxWidth - 2; // left marker + right marker
+  // Always use screen.width to ensure accurate calculation on resize
+  const boxWidth = Math.floor( screen.width * 0.30 ) - 2; // 30% of screen minus borders
+  const contentWidth = boxWidth - 2; // subtract left/right markers
 
   const lines = profileKeys.map(( key, index ) => {
     const profile = profiles[ key ];
@@ -193,9 +194,22 @@ function renderProfileList() {
     const activeSuffix = isActive ? '{/bold}{/green-fg}' : '';
     const left = isSelected ? '>' : ' ';
     const right = isSelected ? '<' : ' ';
-    const label = `[${ profile.hotkey }] ${ profile.name }`;
+    // Available width for label + space + status (contentWidth already excludes left/right markers)
+    // Reserve 1 char for minimum space between label and status
+    const maxNameLength = contentWidth - statusText.length - 1;
+    let label = profile.name;
+    if ( maxNameLength <= 0 ) {
+      // Extremely narrow - no room for label
+      label = '';
+    } else if ( maxNameLength <= 3 ) {
+      // Too narrow for ellipsis, just hard truncate
+      label = label.substring( 0, maxNameLength );
+    } else if ( label.length > maxNameLength ) {
+      label = label.substring( 0, maxNameLength - 2 ) + '..';
+    }
+    // Calculate remaining space (will be >= 1 if we truncated properly, could be 0 if label is empty)
     const padding = contentWidth - label.length - statusText.length;
-    const space = ' '.repeat( Math.max( 1, padding ) );
+    const space = ' '.repeat( Math.max( 0, padding ) );
     return `${ left }${ activePrefix }${ label }${ space }${ activeSuffix }${ status }${ right }`;
   });
 
@@ -235,7 +249,8 @@ function renderServiceList() {
   }
 
   // Calculate available width (70% of screen minus borders and scrollbar)
-  const boxWidth = serviceBox.width - 3; // -2 for borders, -1 for scrollbar
+  // Always use screen.width to ensure accurate calculation on resize
+  const boxWidth = Math.floor( screen.width * 0.70 ) - 3; // 70% of screen minus borders and scrollbar
   const contentWidth = boxWidth - 4; // left marker + icon + space + right marker
 
   const lines = sortedServiceList.map(( service, index ) => {
@@ -742,6 +757,12 @@ function createTUI() {
       const profileKey = profileKeys[ selectedProfileIndex ];
       await switchProfile( profileKey );
     }
+  });
+
+  // Re-render on resize to recalculate truncation
+  screen.on( 'resize', () => {
+    renderProfileList();
+    renderServiceList();
   });
 
   serviceBox.focus();
