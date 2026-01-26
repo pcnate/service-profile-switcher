@@ -5,11 +5,12 @@
   "main": "src/service.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "studio5000": "node src/service.js --profile studio5000",
-    "developer": "node src/service.js --profile developer",
-    "work": "node src/service.js --profile work",
-    "gaming": "node src/service.js --profile gaming",
-    "meeting": "node src/service.js --profile meeting",
+    "start": "node src/service.js",
+    "profile:studio5000": "node src/service.js --profile studio5000",
+    "profile:developer": "node src/service.js --profile developer",
+    "profile:work": "node src/service.js --profile work",
+    "profile:gaming": "node src/service.js --profile gaming",
+    "profile:meeting": "node src/service.js --profile meeting",
     "theme:work": "node src/theme.js --profile work",
     "theme:home": "node src/theme.js --profile home",
     "theme:laptop": "node src/theme.js --profile laptop"
@@ -21,6 +22,7 @@
   "author": "Nathan Baker <pcnate@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "blessed": "^0.1.81",
     "is-elevated": "^3.0.0",
     "minimist": "^1.2.5"
   }
